@@ -1,0 +1,24 @@
+{
+  "name": "hubdeckmail",
+  "version": "1.0.0",
+  "description": "Relay between a Cloudflare-hosted domain and a hosted HubDeck app (HubDeckMail protocol v1)",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "HUBDECK_URL": { "description": "The HubDeck app's address, from Settings > Integrations, for example https://helpdesk.example.com" },
+      "INTEGRATION_ID": { "description": "The integration ID from Settings > Integrations" },
+      "ALLOWED_SENDERS": { "description": "Addresses this relay may send as, comma-separated; @example.com allows a whole domain" },
+      "RELAY_SECRET": { "description": "The relay secret from Settings > Integrations (shown once)" }
+    }
+  }
+}

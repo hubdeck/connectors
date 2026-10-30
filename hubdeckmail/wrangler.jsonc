@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hubdeckmail",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-22",
+  "workers_dev": true,
+  "observability": { "enabled": true },
+
+  // Email Sending. Onboard the sending domain in the dashboard
+  // (Compute > Email Service > Email Sending) before replies can be sent.
+  "send_email": [{ "name": "EMAIL" }],
+
+  "vars": {
+    // The HubDeck app's address, shown in its Settings > Integrations.
+    "HUBDECK_URL": "",
+    // The integration ID, shown in the same place.
+    "INTEGRATION_ID": "",
+    // Addresses this relay may send as, comma-separated; @example.com allows a whole domain.
+    "ALLOWED_SENDERS": ""
+  }
+  // Secret: RELAY_SECRET (see .dev.vars.example).
+}
