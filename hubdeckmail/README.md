@@ -31,6 +31,8 @@ Every request between HubDeck and the Worker is signed with a secret that only t
 3. In the Cloudflare dashboard, open your domain's **Email > Email Routing > Routing rules** and route each support address to the Worker `hubdeckmail` (action **Send to a Worker**).
 4. Back in HubDeck, enter the Worker's URL (for example `https://hubdeckmail.<your-subdomain>.workers.dev`) as the relay URL, select **Test**, then add the same addresses to the integration.
 
+   HubDeck must be able to reach the Worker over HTTPS. The `workers.dev` URL is enabled by `wrangler.jsonc`; if you turn it off, add a custom domain to the Worker and use that as the relay URL instead.
+
 Send a message to one of the addresses to check that it arrives as a ticket.
 
 ### Deploying without the button
