@@ -14,11 +14,12 @@ Every request between HubDeck and the Worker is signed with a secret that only t
 - A domain on Cloudflare, with Email Routing enabled.
 - Email Sending onboarded for that domain (Compute > Email Service > Email Sending), so replies can be sent from it.
 - Admin access to the HubDeck app.
+- For the Deploy to Cloudflare button: a GitHub or GitLab account. The button copies this folder into a new repository in that account and connects it to Cloudflare, so later pushes there redeploy the Worker. No secrets are stored in the repository. To deploy without a Git account, see [Deploying without the button](#deploying-without-the-button).
 
 ## Setup
 
 1. In the HubDeck app, open **Settings > Integrations**, choose **HubDeckMail** and select **Connect**. Copy the three values shown: `HUBDECK_URL`, `INTEGRATION_ID` and `RELAY_SECRET`. The secret is shown only once.
-2. Select **Deploy to Cloudflare** above. When asked, enter:
+2. Select **Deploy to Cloudflare** above. Connect your GitHub or GitLab account when asked, and select **Create private Git repository**. Then enter:
 
    | Name | Value |
    |---|---|
