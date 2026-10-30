@@ -19,7 +19,7 @@ Every request between HubDeck and the Worker is signed with a secret that only t
 ## Setup
 
 1. In the HubDeck app, open **Settings > Integrations**, choose **HubDeckMail** and select **Connect**. Copy the three values shown: `HUBDECK_URL`, `INTEGRATION_ID` and `RELAY_SECRET`. The secret is shown only once.
-2. Select **Deploy to Cloudflare** above. Connect your GitHub or GitLab account when asked, and select **Create private Git repository**. Then enter:
+2. Select **Deploy to Cloudflare** above. Connect your GitHub or GitLab account when asked, select **Create private Git repository**, and keep the project name `hubdeckmail` (it becomes the Worker's name). Then enter:
 
    | Name | Value |
    |---|---|
@@ -54,6 +54,10 @@ Or set the three variables in `wrangler.jsonc` before `npx wrangler deploy`.
 | A request is unsigned, signed with another secret or more than 5 minutes old | Refused (HTTP 401) |
 
 The Worker stores nothing. Mail passes through it and is not kept.
+
+## Updating
+
+The button's repository is your own copy and does not follow this one automatically. To take a new version, merge the changes from `hubdeck/connectors` (folder `hubdeckmail/`) into your copy; the push redeploys the Worker. HubDeck keeps supporting every protocol version it has shipped, so updating is only needed for new features or fixes.
 
 ## Changing the secret
 
