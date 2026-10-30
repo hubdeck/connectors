@@ -12,7 +12,7 @@ Components that HubDeck customers run on their own side, for example in their ow
 
 | Connector | Status | Purpose |
 |---|---|---|
-| `hubdeckmail/` | Planned | Cloudflare Worker in the customer's account: receives mail for their domain through Email Routing and sends replies through Email Sending, on behalf of a hosted HubDeck app |
+| [`hubdeckmail/`](hubdeckmail/) | Available | Cloudflare Worker in the customer's account: receives mail for their domain through Email Routing and sends replies through Email Sending, on behalf of a hosted HubDeck app |
 
 ## Licence
 

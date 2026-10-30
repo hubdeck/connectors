@@ -1,0 +1,3 @@
+# Shared secret that signs every request between HubDeck and this relay.
+# Shown once in HubDeck's Settings > Integrations when the integration is created.
+RELAY_SECRET=
